@@ -1,0 +1,149 @@
+/* General styles */
+body {
+    background-color: linear-gradient(to right, #e0ecff, #f5faff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .tarot-box {
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-top: 1rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .tarot-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tarot-box img,
+  .tarot-box svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Optional: Text color inside tarot box */
+  .tarot-box span {
+    font-weight: 600;
+    color: #333;
+  }
+  .recommendation-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  .section-card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .section-card:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  /* Button styles */
+  .primary-button {
+    background-color: #0a66c2;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .primary-button:hover {
+    background-color: #004a99;
+  }
+  
+  .secondary-button {
+    background-color: #dabfff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    transition: background 0.3s ease;
+  }
+  
+  .secondary-button:hover {
+    background-color: #c8a4ff;
+  }
+  
+  /* Option buttons (values, job titles, locations, etc.) */
+  .option-button {
+    padding: 10px 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .option-button.selected {
+    border: 1px solid #0a66c2;
+    background-color: #e6f0fa;
+    color: #0a66c2;
+  }
+  
+  .option-button:hover {
+    border-color: #0a66c2;
+  }
+  
+  /* Recommendation card */
+  .recommendation-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Flex wrap container for options */
+  .flex-wrap-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  

@@ -1,0 +1,211 @@
+.home-container {
+  font-family: 'Arial, sans-serif';
+  background-color: #f0f8ff; /* Light blue background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  perspective: 1000px; /* For 3D effects */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 60px;
+  transform-style: preserve-3d;
+}
+
+.hero-title {
+  font-size: 3.5em;
+  color: #333;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateZ(50px); /* Push title forward */
+}
+
+.hero-subtitle {
+  font-size: 1.5em;
+  color: #555;
+  margin-bottom: 30px;
+  opacity: 0.8;
+  transform: translateZ(30px);
+}
+
+.explore-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform-style: preserve-3d;
+  transform: translateZ(20px);
+}
+
+.explore-button:hover {
+  background-color: #0056b3;
+  transform: translateZ(20px) translateY(-5px);
+}
+
+.tarot-teaser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 60px;
+  transform-style: preserve-3d;
+}
+
+.card-stack {
+  position: relative;
+  width: 120px;
+  height: 180px;
+  margin-bottom: 20px;
+  transform-style: preserve-3d;
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-in-out, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card1 {
+  transform: translateZ(20px) rotateY(10deg);
+}
+
+.card2 {
+  transform: translateZ(10px) rotateY(-5deg) translateY(10px);
+}
+
+.card3 {
+  transform: rotateY(0deg) translateY(20px);
+}
+
+.card-stack:hover .card1 {
+  transform: translateZ(40px) rotateY(20deg);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-stack:hover .card2 {
+  transform: translateZ(30px) rotateY(-10deg) translateY(5px);
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-stack:hover .card3 {
+  transform: rotateY(0deg) translateY(0px) scale(1.05);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.teaser-text {
+  font-size: 1.2em;
+  color: #444;
+  text-align: center;
+  margin-bottom: 15px;
+  transform: translateZ(20px);
+}
+
+.tarot-button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1em;
+  background-color: #a8dadc; /* Light teal */
+  color: #1d3557; /* Dark blue */
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform-style: preserve-3d;
+  transform: translateZ(10px);
+}
+
+.tarot-button:hover {
+  background-color: #457b9d;
+  color: white;
+  transform: translateZ(10px) translateY(-3px);
+}
+
+.features-section {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  transform-style: preserve-3d;
+}
+
+.feature-item {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateZ(20px);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateZ(20px) translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2em;
+  color: #00bfff; /* Cyan */
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* Basic animation for the hero title */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateZ(50px) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateZ(50px) translateY(0);
+  }
+}
+
+.hero-title {
+  animation: fadeInUp 1s ease-out 0.5s backwards;
+}
+
+/* Basic animation for the explore button */
+@keyframes pulse {
+  0% {
+    transform: translateZ(20px) scale(1);
+  }
+  50% {
+    transform: translateZ(20px) scale(1.05);
+  }
+  100% {
+    transform: translateZ(20px) scale(1);
+  }
+}
+
+.explore-button {
+  animation: pulse 2s infinite alternate;
+}
+
+/* Import Font Awesome for icons (if you haven't already in your index.html) */
+/* You might need to add a CDN link in your public/index.html, e.g.:
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+*/

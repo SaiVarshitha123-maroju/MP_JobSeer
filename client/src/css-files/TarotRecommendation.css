@@ -1,0 +1,166 @@
+/* Background & layout */
+body {
+  min-height: 100vh;
+  background-attachment: fixed; /* important! */
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab); /* Mystic gradient */
+  color: #f5f5f5;
+}
+
+.tarot-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Button styles */
+.shuffle-button {
+  padding: 14px 28px;
+  background: linear-gradient(145deg, #b47bff, #dabfff);
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #2d004d;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.shuffle-button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(145deg, #dabfff, #b47bff);
+}
+
+/* Video container */
+.shuffle-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 0 10px;
+}
+
+.shuffle-video {
+  width: 100%;
+  max-width: 1440px;
+  aspect-ratio: 16 / 8.5;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+/* Pick title */
+.pick-title {
+  margin-top: 40px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff5e6;
+}
+
+/* Card grid */
+.card-selection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+/* Tarot flip card */
+.flip-card {
+  background-color: transparent;
+  width: 180px;
+  height: 260px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 10px;
+}
+
+.flip-card-back p {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Job recommendation list */
+.recommendation-list {
+  text-align: left;
+  margin-top: 50px;
+  padding: 0 5%;
+}
+
+.recommendation-list h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffe9e3;
+}
+
+.job-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border-left: 5px solid #dabfff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #f5f5f5;
+}
+
+.job-card a {
+  color: #dabfff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.job-card a:hover {
+  text-decoration: underline;
+}
