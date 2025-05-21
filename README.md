@@ -25,7 +25,8 @@ Traditional job portals lack emotional depth. JobSeer bridges the gap by merging
 
 ## 🧩 System Architecture
 
-[Screenshot 2025-05-21 113035](https://github.com/user-attachments/assets/d205bb3d-55fa-4c5c-a23a-1b7c0ea33301)
+![Screenshot 2025-05-21 113035](https://github.com/user-attachments/assets/97e405c8-a7e1-46eb-9c7c-e691d93e1996)
+
 
 
 ### Frontend (React.js)
