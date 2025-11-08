@@ -24,16 +24,18 @@ mongoose
 app.use(cors());
 app.use(bodyParser.json());
 
+// Serve static files from React build (in production)
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
+
 // Route handlers
 app.use("/api/auth", authRoutes); // for /signup and /login
 app.use("/api/recommend", recommendRoutes); // for your ML recommend API
 
-// Serve static files from React build (in production)
+// Serve index.html for any other route (React Router) - must be last
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client/build")));
-
-  // Serve index.html for any other route (React Router)
-  app.get("/*", (req, res) => {
+  app.use((req, res) => {
     res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
 }
