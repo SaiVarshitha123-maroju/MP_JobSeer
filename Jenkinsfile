@@ -27,7 +27,7 @@ pipeline {
                 stage('Frontend Processing') {
                     agent { label 'win' }
                     steps {
-                        echo 'Processing Frontend files on win'
+                        echo 'Processing Frontend files on win  '
                         bat 'mkdir dist_frontend'
                         bat 'xcopy /E /I client dist_frontend\\client'
                         stash includes: 'dist_frontend/**', name: 'frontend_files'
