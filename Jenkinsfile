@@ -13,7 +13,7 @@ pipeline {
                 stage('Backend Processing') {
                     agent { label 'win_agent' }
                     steps {
-                        echo 'Processing Backend files on win_agent...'
+                        echo 'Processing Backend files on win_agent'
                         bat 'mkdir dist_backend'
                         bat 'copy server.js dist_backend\\'
                         bat 'copy cosineSimilarityModel.js dist_backend\\'
@@ -27,7 +27,7 @@ pipeline {
                 stage('Frontend Processing') {
                     agent { label 'win' }
                     steps {
-                        echo 'Processing Frontend files on win...'
+                        echo 'Processing Frontend files on win'
                         bat 'mkdir dist_frontend'
                         bat 'xcopy /E /I client dist_frontend\\client'
                         stash includes: 'dist_frontend/**', name: 'frontend_files'
@@ -37,7 +37,7 @@ pipeline {
                 stage('Docker Processing') {
                     agent { label 'win_agent' }
                     steps {
-                        echo 'Processing Docker configuration files...'
+                        echo 'Processing Docker configuration files'
                         bat 'mkdir dist_docker'
                         bat 'copy Dockerfile dist_docker\\'
                         bat 'copy .dockerignore dist_docker\\'
@@ -57,7 +57,7 @@ pipeline {
         stage('Combine & Build') {
             agent { label 'built-in' }
             steps {
-                echo 'Combining all files...'
+                echo 'Combining all files'
                 dir('final_dist') {
                     unstash 'backend_files'
                     unstash 'frontend_files'
@@ -71,7 +71,7 @@ pipeline {
         stage('Docker Build') {
             agent { label 'win_agent' }
             steps {
-                echo 'Building Docker image...'
+                echo 'Building Docker image'
                 dir('final_dist') {
                     unstash 'backend_files'
                     unstash 'frontend_files'
@@ -88,7 +88,7 @@ pipeline {
         stage('Deploy Container') {
             agent { label 'win_agent' }
             steps {
-                echo 'Deploying Docker container...'
+                echo 'Deploying Docker container'
                 bat 'docker run -d --name jobseer -p 5000:5000 jobseer:latest'
                 echo 'Application deployed successfully on port 5000'
             }
