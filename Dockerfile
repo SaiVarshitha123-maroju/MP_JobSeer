@@ -32,7 +32,7 @@ COPY routes/ ./routes/
 COPY --from=client-build /app/client/build ./client/build
 
 # Expose port
-EXPOSE 3000
+EXPOSE 5000
 
 # Set environment variables
 ENV NODE_ENV=production
