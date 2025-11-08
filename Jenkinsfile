@@ -89,8 +89,6 @@ pipeline {
             agent { label 'win_agent' }
             steps {
                 echo 'Deploying Docker container...'
-                bat 'docker stop jobseer || exit 0'
-                bat 'docker rm jobseer || exit 0'
                 bat 'docker run -d --name jobseer -p 5000:5000 jobseer:latest'
                 echo 'Application deployed successfully on port 5000'
             }
