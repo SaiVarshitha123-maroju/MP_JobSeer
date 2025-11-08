@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jobseer-deployment
+  namespace: jobseer
+  labels:
+    app: jobseer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jobseer
+  template:
+    metadata:
+      labels:
+        app: jobseer
+    spec:
+      containers:
+      - name: jobseer
+        image: saivarshithamaroju/jobseer:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+        env:
+        - name: NODE_ENV
+          value: "production"
