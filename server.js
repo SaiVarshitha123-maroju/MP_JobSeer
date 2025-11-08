@@ -28,10 +28,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "client/build")));
 }
 
-app.use("/api/auth", authRoutes); // for /signup and /login
-app.use("/api/recommend", recommendRoutes); // for your ML recommend API
+app.use("/api/auth", authRoutes); 
+app.use("/api/recommend", recommendRoutes); 
 
-// Serve index.html for any other route (React Router) - must be last
 if (process.env.NODE_ENV === "production") {
   app.use((req, res) => {
     res.sendFile(path.join(__dirname, "client/build", "index.html"));
